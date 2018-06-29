@@ -13,26 +13,23 @@ source:
 
 build:
   skip: true  # [win and py34]
-  number: 0
-  features:
-    - vc9  # [win and py27]
-    - vc10  # [win and py34]
-    - vc14  # [win and py35]
+  number: 1
 
 requirements:
   build:
-    - python  # [win]
     - cmake  # [win]
     - autoconf  # [unix]
     - automake  # [unix]
     - libtool  # [unix]
-    - toolchain
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - sdl2 2.0.*
-    - jpeg 9*
-    - libpng >=1.6.23,<1.7
-    - libtiff 4.0.*
-    - zlib 1.2.*
-    - libwebp 0.5.*
+    - jpeg
+    - libpng
+    - libtiff
+    - zlib
+    - libwebp
 
   run:
     - sdl2 2.0.*
@@ -56,8 +53,8 @@ about:
   license_file: COPYING.txt
   summary: "Library for loading images as SDL surfaces and textures"
   description: |
-    Simple DirectMedia Layer is a cross-platform development library designed to 
-    provide low level access to audio, keyboard, mouse, joystick, and graphics 
+    Simple DirectMedia Layer is a cross-platform development library designed to
+    provide low level access to audio, keyboard, mouse, joystick, and graphics
     hardware via OpenGL and Direct3D.
   doc_url: https://www.libsdl.org/projects/SDL_image/docs/index.html
   dev_url: http://hg.libsdl.org/SDL_image/
