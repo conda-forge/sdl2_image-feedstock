@@ -1,0 +1,28 @@
+c_compiler:
+- vs2015
+cxx_compiler:
+- vs2015
+jpeg:
+- '9'
+libpng:
+- 1.6.34
+libtiff:
+- 4.0.9
+libwebp:
+- '0.5'
+pin_run_as_build:
+  jpeg:
+    max_pin: x
+  libpng:
+    max_pin: x.x
+  libtiff:
+    max_pin: x
+  libwebp:
+    max_pin: x.x
+  zlib:
+    max_pin: x.x
+zip_keys:
+- - c_compiler
+  - cxx_compiler
+zlib:
+- '1.2'

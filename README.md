@@ -17,14 +17,16 @@ hardware via OpenGL and Direct3D.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/sdl2_image-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/sdl2_image-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/sdl2_image-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/sdl2_image-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/sdl2_image-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/sdl2-image-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/sdl2_image-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/sdl2_image-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/sdl2_image-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/sdl2_image-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/sdl2_image-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/sdl2-image-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/sdl2_image/badges/version.svg)](https://anaconda.org/conda-forge/sdl2_image)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/sdl2_image/badges/downloads.svg)](https://anaconda.org/conda-forge/sdl2_image)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-sdl2_image-green.svg)](https://anaconda.org/conda-forge/sdl2_image) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sdl2_image.svg)](https://anaconda.org/conda-forge/sdl2_image) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sdl2_image.svg)](https://anaconda.org/conda-forge/sdl2_image) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sdl2_image.svg)](https://anaconda.org/conda-forge/sdl2_image) |
 
 Installing sdl2_image
 =====================
