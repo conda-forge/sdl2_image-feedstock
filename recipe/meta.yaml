@@ -1,6 +1,6 @@
 {% set name = "SDL2_image" %}
-{% set version = "2.0.2" %}
-{% set sha256 = "72df075aef91fc4585098ea7e0b072d416ec7599aa10473719fbe51e9b8f6ce8" %}
+{% set version = "2.0.4" %}
+{% set sha256 = "e74ec49c2402eb242fbfa16f2f43a19582a74c2eabfbfb873f00d4250038ceac" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win and py34]
-  number: 1
+  number: 0
 
 requirements:
   build:
