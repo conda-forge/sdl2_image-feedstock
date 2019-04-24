@@ -1,15 +1,19 @@
 c_compiler:
 - vs2008
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
 cxx_compiler:
 - vs2008
 jpeg:
 - '9'
 libpng:
-- 1.6.34
+- 1.6.35
 libtiff:
 - 4.0.9
 libwebp:
-- '0.5'
+- 1.0.0
 pin_run_as_build:
   jpeg:
     max_pin: x
