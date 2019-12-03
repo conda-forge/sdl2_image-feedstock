@@ -1,18 +1,16 @@
-{% set name = "SDL2_image" %}
 {% set version = "2.0.5" %}
-{% set sha256 = "bdd5f6e026682f7d7e1be0b6051b209da2f402a2dd8bd1c4bd9c25ad263108d0" %}
 
 package:
-  name: {{ name|lower }}
+  name: sdl2_image
   version: {{ version }}
 
 source:
-  fn:  {{ name }}-{{ version }}.tar.gz
-  url:  https://www.libsdl.org/projects/SDL_image/release/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url:  https://www.libsdl.org/projects/SDL_image/release/SDL2_image-{{ version }}.tar.gz
+  sha256: bdd5f6e026682f7d7e1be0b6051b209da2f402a2dd8bd1c4bd9c25ad263108d0
 
 build:
-  number: 0
+  number: 1
+  skip: True  # [win and vc<14]
 
 requirements:
   build:

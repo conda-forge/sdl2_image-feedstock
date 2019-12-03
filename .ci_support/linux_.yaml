@@ -15,11 +15,11 @@ docker_image:
 jpeg:
 - '9'
 libpng:
-- 1.6.35
+- '1.6'
 libtiff:
-- 4.0.9
+- 4.1.0
 libwebp:
-- 1.0.0
+- '1.0'
 pin_run_as_build:
   jpeg:
     max_pin: x
