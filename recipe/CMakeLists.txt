@@ -55,11 +55,13 @@ set(SDLIMAGE_SUPPORT_PNM ON CACHE BOOL "Support for PNM file format")
 set(SDLIMAGE_SUPPORT_TGA ON CACHE BOOL "Support for TGA file format")
 set(SDLIMAGE_SUPPORT_XPM ON CACHE BOOL "Support for XPM file format")
 set(SDLIMAGE_SUPPORT_XV ON CACHE BOOL "Support for XV file format")
-
 set(SDLIMAGE_SUPPORT_JPEG ON CACHE BOOL "Support for JPEG file format")
 set(SDLIMAGE_SUPPORT_PNG ON CACHE BOOL "Support for PNG file format")
 set(SDLIMAGE_SUPPORT_WEBP ON CACHE BOOL "Support for WEBP file format")
 set(SDLIMAGE_SUPPORT_TIFF ON CACHE BOOL "Support for TIFF file format")
+set(SDLIMAGE_SUPPORT_SVG ON CACHE BOOL "Support for SVG file format")
+set(SDLIMAGE_SUPPORT_XCF ON CACHE BOOL "Support for XCF file format")
+
 
 if(SDLIMAGE_SUPPORT_BMP)
   add_definitions(-DLOAD_BMP)
@@ -153,6 +155,13 @@ if(SDLIMAGE_SUPPORT_WEBP)
   else()
     message(FATAL_ERROR "Could not locate libwebp.lib")
   endif() 
+endif()
+
+if(SDLIMAGE_SUPPORT_SVG)
+  add_definitions(-DLOAD_SVG)
+endif()
+if(SDLIMAGE_SUPPORT_XCF)
+  add_definitions(-DLOAD_XCF)
 endif()
 
 ##### Installation targets #####
