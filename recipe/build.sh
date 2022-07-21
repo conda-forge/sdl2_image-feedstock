@@ -9,6 +9,7 @@ cd build
 # disabled JXL because it's not yet in conda-forge
 cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_SHARED_LIBS=ON \
     -DSDL2IMAGE_DEPS_SHARED=ON \
     -DSDL2IMAGE_VENDORED=OFF \
