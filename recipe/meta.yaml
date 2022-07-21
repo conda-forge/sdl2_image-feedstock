@@ -32,14 +32,19 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libSDL2_image.a  # [unix]
-    - test -f $PREFIX/lib/libSDL2_image.dylib  # [osx]
-    - test -f $PREFIX/lib/libSDL2_image.so  # [linux]
-    - test -f $PREFIX/include/SDL2/SDL_image.h  # [unix]
-    - if not exist %LIBRARY_LIB%\\SDL2_image.lib exit 1  # [win]
-    - if not exist %LIBRARY_BIN%\\SDL2_image.dll exit 1  # [win]
+    # shared libraries
+    - test -f $PREFIX/lib/libSDL2_image.dylib               # [osx]
+    - test -f $PREFIX/lib/libSDL2_image.so                  # [linux]
+    - if not exist %LIBRARY_LIB%\\SDL2_image.lib exit 1     # [win]
+    - if not exist %LIBRARY_BIN%\\SDL2_image.dll exit 1     # [win]
+
+    # absence of static libraries
+    - test ! -f $PREFIX/lib/libSDL2_image.a                 # [not win]
+
+    # headers
+    - test -f $PREFIX/include/SDL2/SDL_image.h              # [unix]
     - if not exist %LIBRARY_INC%\\SDL2\\SDL_image.h exit 1  # [win]
-    - if not exist %LIBRARY_INC%\\SDL2\\miniz.h exit 1  # [win]
+    - if not exist %LIBRARY_INC%\\SDL2\\miniz.h exit 1      # [win]
 
 about:
   home: https://www.libsdl.org/projects/SDL_image/
