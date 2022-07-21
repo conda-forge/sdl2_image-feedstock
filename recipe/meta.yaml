@@ -13,20 +13,20 @@ build:
 
 requirements:
   build:
-    - cmake  # [win]
-    - autoconf  # [unix]
-    - automake  # [unix]
-    - libtool  # [unix]
+    - cmake
+    - ninja
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - sdl2 2.0.*
     - jpeg
+    - libavif
+    # not yet in conda-forge
+    # - libjxl
     - libpng
     - libtiff
-    - zlib
     - libwebp
-
+    - zlib
   run:
     - sdl2 2.0.*
 
