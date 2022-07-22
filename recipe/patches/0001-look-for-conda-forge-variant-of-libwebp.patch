@@ -1,0 +1,25 @@
+From 6a92df7b09450d96fa68b16a24bd08c7e75b3f82 Mon Sep 17 00:00:00 2001
+From: "H. Vetinari" <h.vetinari@gmx.com>
+Date: Thu, 21 Jul 2022 20:44:25 +0200
+Subject: [PATCH] look for conda-forge variant of libwebp
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 302c231..92fb2b9 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -607,7 +607,7 @@ if(SDL2IMAGE_WEBP)
+         list(APPEND INSTALL_EXTRA_TARGETS webp)
+     else()
+         message(STATUS "${PROJECT_NAME}: Using system libwebp")
+-        find_package(webp REQUIRED)
++        find_package(WebP REQUIRED)
+         list(APPEND PC_REQUIRES libwebp)
+     endif()
+     if(SDL2IMAGE_WEBP_SHARED)
+-- 
+2.37.0.windows.1
+

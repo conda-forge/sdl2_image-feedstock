@@ -7,6 +7,8 @@ package:
 source:
   url: https://github.com/libsdl-org/SDL_image/archive/refs/tags/release-{{ version }}.tar.gz
   sha256: fb61d96446cdb1668f837dd7ba1d22d6631755d5dda86580a1cb5aefa3e62278
+  patches:
+    - patches/0001-look-for-conda-forge-variant-of-libwebp.patch
 
 build:
   number: 0
