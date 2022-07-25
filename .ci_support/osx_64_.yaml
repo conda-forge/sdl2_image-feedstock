@@ -20,7 +20,7 @@ libpng:
 - '1.6'
 libtiff:
 - '4'
-libwebp:
+libwebp_base:
 - '1'
 macos_machine:
 - x86_64-apple-darwin13.4.0
