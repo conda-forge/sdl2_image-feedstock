@@ -187,4 +187,5 @@ Feedstock Maintainers
 
 * [@a-hurst](https://github.com/a-hurst/)
 * [@dschreij](https://github.com/dschreij/)
+* [@h-vetinari](https://github.com/h-vetinari/)
 
