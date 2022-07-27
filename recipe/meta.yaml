@@ -1,60 +1,67 @@
-{% set version = "2.0.5" %}
+{% set version = "2.6.0" %}
 
 package:
   name: sdl2_image
   version: {{ version }}
 
 source:
-  url:  https://www.libsdl.org/projects/SDL_image/release/SDL2_image-{{ version }}.tar.gz
-  sha256: bdd5f6e026682f7d7e1be0b6051b209da2f402a2dd8bd1c4bd9c25ad263108d0
+  url: https://github.com/libsdl-org/SDL_image/archive/refs/tags/release-{{ version }}.tar.gz
+  sha256: fb61d96446cdb1668f837dd7ba1d22d6631755d5dda86580a1cb5aefa3e62278
+  patches:
+    - patches/0001-look-for-conda-forge-variant-of-libwebp.patch  # [win]
+    - patches/0002-remove-custom-find-webp.patch                  # [win]
 
 build:
-  number: 2
-  skip: True  # [win and vc<14]
+  number: 0
 
 requirements:
   build:
-    - cmake  # [win]
-    - autoconf  # [unix]
-    - automake  # [unix]
-    - libtool  # [unix]
+    - cmake
+    - ninja
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - sdl2 2.0.*
     - jpeg
+    - libavif
+    # not yet in conda-forge
+    # - libjxl
     - libpng
     - libtiff
+    - libwebp-base
     - zlib
-    - libwebp
-
   run:
     - sdl2 2.0.*
 
 test:
   commands:
-    - test -f $PREFIX/lib/libSDL2_image.a  # [unix]
-    - test -f $PREFIX/lib/libSDL2_image.dylib  # [osx]
-    - test -f $PREFIX/lib/libSDL2_image.so  # [linux]
-    - test -f $PREFIX/include/SDL2/SDL_image.h  # [unix]
-    - if not exist %LIBRARY_LIB%\\SDL2_image.lib exit 1  # [win]
-    - if not exist %LIBRARY_BIN%\\SDL2_image.dll exit 1  # [win]
+    # shared libraries
+    - test -f $PREFIX/lib/libSDL2_image.dylib               # [osx]
+    - test -f $PREFIX/lib/libSDL2_image.so                  # [linux]
+    - if not exist %LIBRARY_LIB%\\SDL2_image.lib exit 1     # [win]
+    - if not exist %LIBRARY_BIN%\\SDL2_image.dll exit 1     # [win]
+
+    # absence of static libraries
+    - test ! -f $PREFIX/lib/libSDL2_image.a                 # [not win]
+
+    # headers
+    - test -f $PREFIX/include/SDL2/SDL_image.h              # [unix]
     - if not exist %LIBRARY_INC%\\SDL2\\SDL_image.h exit 1  # [win]
-    - if not exist %LIBRARY_INC%\\SDL2\\miniz.h exit 1  # [win]
 
 about:
   home: https://www.libsdl.org/projects/SDL_image/
-  license: ZLIB
-  license_file: COPYING.txt
+  license: Zlib
+  license_file: LICENSE.txt
   summary: "Library for loading images as SDL surfaces and textures"
   description: |
     Simple DirectMedia Layer is a cross-platform development library designed to
     provide low level access to audio, keyboard, mouse, joystick, and graphics
     hardware via OpenGL and Direct3D.
-  doc_url: https://www.libsdl.org/projects/SDL_image/docs/index.html
-  dev_url: http://hg.libsdl.org/SDL_image/
+  doc_url: https://wiki.libsdl.org/SDL_image
+  dev_url: https://github.com/libsdl-org/SDL_image
 
 extra:
   recipe-maintainers:
     - dschreij
     - a-hurst
+    - h-vetinari
