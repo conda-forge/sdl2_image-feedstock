@@ -1,4 +1,4 @@
-{% set version = "2.6.0" %}
+{% set version = "2.6.1" %}
 
 package:
   name: sdl2_image
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/libsdl-org/SDL_image/archive/refs/tags/release-{{ version }}.tar.gz
-  sha256: fb61d96446cdb1668f837dd7ba1d22d6631755d5dda86580a1cb5aefa3e62278
+  sha256: 460da7fcee5302fdcc20ee0c26ad1c8d48810d2e368e73d564daf267344780f9
   patches:
     - patches/0001-look-for-conda-forge-variant-of-libwebp.patch  # [win]
     - patches/0002-remove-custom-find-webp.patch                  # [win]
@@ -52,7 +52,7 @@ about:
   home: https://www.libsdl.org/projects/SDL_image/
   license: Zlib
   license_file: LICENSE.txt
-  summary: "Library for loading images as SDL surfaces and textures"
+  summary: Library for loading images as SDL surfaces and textures
   description: |
     Simple DirectMedia Layer is a cross-platform development library designed to
     provide low level access to audio, keyboard, mouse, joystick, and graphics
