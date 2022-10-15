@@ -17,22 +17,13 @@ docker_image:
 jpeg:
 - '9'
 libavif:
-- 0.10.1
+- 0.11.0
 libpng:
 - '1.6'
 libtiff:
 - '4'
 libwebp_base:
 - '1'
-pin_run_as_build:
-  jpeg:
-    max_pin: x
-  libpng:
-    max_pin: x.x
-  libtiff:
-    max_pin: x
-  zlib:
-    max_pin: x.x
 target_platform:
 - linux-64
 zip_keys:
