@@ -1,4 +1,4 @@
-{% set version = "2.6.1" %}
+{% set version = "2.6.2" %}
 
 package:
   name: sdl2_image
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://github.com/libsdl-org/SDL_image/archive/refs/tags/release-{{ version }}.tar.gz
-  sha256: 460da7fcee5302fdcc20ee0c26ad1c8d48810d2e368e73d564daf267344780f9
+  sha256: 5d91ea72b449a161821ef51464d0767efb6fedf7a773f923c43e483dc137e362
   patches:
     - patches/0001-look-for-conda-forge-variant-of-libwebp.patch  # [win]
     - patches/0002-remove-custom-find-webp.patch                  # [win]
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
