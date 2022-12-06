@@ -1,4 +1,6 @@
 #!/bin/bash
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/gnuconfig/config.* .
 set -ex
 
 mkdir build
@@ -7,7 +9,7 @@ cd build
 # full list of formats as of:
 # https://github.com/libsdl-org/SDL_image/blob/release-2.6.0/CMakeLists.txt#L63-L79
 # disabled JXL because it's not yet in conda-forge
-cmake -G Ninja \
+cmake ${CMAKE_ARGS} -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_SHARED_LIBS=ON \
