@@ -15,7 +15,7 @@ build:
   number: 2
   run_exports:
     # see https://abi-laboratory.pro/tracker/timeline/sdl_image
-    - {{ pin_subpackage("sdl2_image", max_pin="x.x") }}
+    - {{ pin_subpackage("sdl2_image", max_pin="x") }}
 
 requirements:
   build:
