@@ -21,9 +21,11 @@ libavif:
 libpng:
 - '1.6'
 libtiff:
-- '4'
+- '4.5'
 libwebp_base:
 - '1'
+sdl2:
+- '2'
 target_platform:
 - linux-64
 zip_keys:
