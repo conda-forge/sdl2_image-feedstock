@@ -12,10 +12,10 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '14'
-jpeg:
-- '9'
 libavif:
 - 0.11.1
+libjpeg_turbo:
+- 2.1.5
 libpng:
 - '1.6'
 libtiff:
