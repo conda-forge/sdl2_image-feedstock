@@ -1,0 +1,22 @@
+From f926d9c8c362725bc23e9a8ed3968b2d7223f04d Mon Sep 17 00:00:00 2001
+From: "H. Vetinari" <h.vetinari@gmx.com>
+Date: Mon, 11 Sep 2023 08:16:03 +1100
+Subject: [PATCH 3/3] don't hardcode libavif version in find_package call
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f25c78b..629b991 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -345,7 +345,7 @@ if(SDL2IMAGE_AVIF)
+         endif()
+     else()
+         message(STATUS "${PROJECT_NAME}: Using system libavif")
+-        find_package(libavif ${LIBAVIF_MINIMUM_VERSION} REQUIRED)
++        find_package(libavif REQUIRED)
+         list(APPEND PC_REQUIRES libavif)
+     endif()
+     if(SDL2IMAGE_AVIF_SHARED)
