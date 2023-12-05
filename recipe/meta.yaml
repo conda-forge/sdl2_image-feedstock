@@ -10,7 +10,6 @@ source:
   patches:
     - patches/0001-look-for-conda-forge-variant-of-libwebp.patch                # [win]
     - patches/0002-BLD-Use-CMake-artifacts-instead-of-custom-findwebp.patch     # [win]
-    - patches/0003-don-t-hardcode-libavif-version-in-find_package-call.patch
 
 build:
   number: 0
