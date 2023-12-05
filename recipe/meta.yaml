@@ -1,4 +1,4 @@
-{% set version = "2.6.3" %}
+{% set version = "2.8.0" %}
 
 package:
   name: sdl2_image
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://github.com/libsdl-org/SDL_image/archive/refs/tags/release-{{ version }}.tar.gz
-  sha256: e3fb5136e1c0e0e118051fbd96cddaf988715ed9fec9296b4861e21823c75b75
+  sha256: fce636dcf2570f68d8adbc2dd13567ab42aff5fde785ca57490ee2d2ff131e89
   patches:
     - patches/0001-look-for-conda-forge-variant-of-libwebp.patch                # [win]
     - patches/0002-BLD-Use-CMake-artifacts-instead-of-custom-findwebp.patch     # [win]
     - patches/0003-don-t-hardcode-libavif-version-in-find_package-call.patch
 
 build:
-  number: 4
+  number: 0
   run_exports:
     # see https://abi-laboratory.pro/tracker/timeline/sdl_image
     - {{ pin_subpackage("sdl2_image", max_pin="x") }}
