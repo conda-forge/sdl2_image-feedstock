@@ -1,4 +1,4 @@
-{% set version = "2.8.0" %}
+{% set version = "2.8.1" %}
 
 package:
   name: sdl2_image
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/libsdl-org/SDL_image/archive/refs/tags/release-{{ version }}.tar.gz
-  sha256: fce636dcf2570f68d8adbc2dd13567ab42aff5fde785ca57490ee2d2ff131e89
+  sha256: 2162abce9e4edb62267e0db5c2886058f0a16020a468eccc06d006df96ca972f
   patches:
     - patches/0001-look-for-conda-forge-variant-of-libwebp.patch                # [win]
     - patches/0002-BLD-Use-CMake-artifacts-instead-of-custom-findwebp.patch     # [win]
