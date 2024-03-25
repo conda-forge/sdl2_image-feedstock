@@ -11,6 +11,7 @@ source:
     - patches/0001-look-for-conda-forge-variant-of-libwebp.patch                # [win]
     - patches/0002-BLD-Use-CMake-artifacts-instead-of-custom-findwebp.patch     # [win]
     - patches/0003-fix-library-soversion-name-in-macos.patch                    # [osx]
+    - patches/0004-fix-libtiff-linking-with-cmake328.patch
 
 build:
   number: 0
