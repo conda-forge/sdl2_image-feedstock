@@ -10,6 +10,7 @@ source:
   patches:
     - patches/0001-look-for-conda-forge-variant-of-libwebp.patch                # [win]
     - patches/0002-BLD-Use-CMake-artifacts-instead-of-custom-findwebp.patch     # [win]
+    - patches/0003-fix-library-soversion-name-in-macos.patch                    # [osx]
 
 build:
   number: 0
@@ -42,6 +43,14 @@ test:
     - test -f $PREFIX/lib/libSDL2_image.so                  # [linux]
     - if not exist %LIBRARY_LIB%\\SDL2_image.lib exit 1     # [win]
     - if not exist %LIBRARY_BIN%\\SDL2_image.dll exit 1     # [win]
+    # Workaround for https://github.com/conda-forge/sdl2_ttf-feedstock/issues/18, remove once
+    # the library is upgrade to sdl3
+    - test -f $PREFIX/lib/libSDL2_image-2.0.801.0.0.dylib   # [osx]
+    - test -f $PREFIX/lib/libSDL2_image-2.0.601.3.0.dylib   # [osx]
+    - test -f $PREFIX/lib/libSDL2_image-2.0.601.2.0.dylib   # [osx]
+    - test -f $PREFIX/lib/libSDL2_image-2.0.601.1.0.dylib   # [osx]
+    - test -f $PREFIX/lib/libSDL2_image-2.0.601.0.0.dylib   # [osx]
+    - test -f $PREFIX/lib/libSDL2_image-2.0.3.0.0.dylib     # [osx]
 
     # absence of static libraries
     - test ! -f $PREFIX/lib/libSDL2_image.a                 # [not win]
