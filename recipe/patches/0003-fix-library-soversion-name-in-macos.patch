@@ -1,0 +1,25 @@
+From ac242498c6f3aaa1729825a42c3a691dbd3169bb Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Mon, 25 Mar 2024 13:33:24 +0100
+Subject: [PATCH] Fix macos
+
+---
+ CMakeLists.txt | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4ebbddaa..24a0651b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -262,8 +262,9 @@ if(NOT ANDROID)
+         # the SOVERSION property corresponds to the compatibility version and VERSION corresponds to the current version
+         # https://cmake.org/cmake/help/latest/prop_tgt/SOVERSION.html#mach-o-versions
+         set_target_properties(SDL2_image PROPERTIES
+-            SOVERSION "${DYLIB_COMPATIBILITY_VERSION}"
+-            VERSION "${DYLIB_CURRENT_VERSION}"
++            SOVERSION "${LT_MAJOR}"
++            MACHO_COMPATIBILITY_VERSION "${DYLIB_COMPATIBILITY_VERSION}"
++            MACHO_CURRENT_VERSION "${MACHO_CURRENT_VERSION}"
+         )
+     else()
+         set_target_properties(SDL2_image PROPERTIES
