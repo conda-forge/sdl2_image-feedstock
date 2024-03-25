@@ -17,7 +17,7 @@ index f3cb86e4..0890698b 100644
      if(SDL2IMAGE_TIF_SHARED)
 +        # If TIFF::tiff exists, use that one, otherwise
 +        # fallback to TIFF:TIFF
-+        it(TARGET TIFF::tiff)
++        if(TARGET TIFF::tiff)
 +            set(SDL2IMAGE_TIF_IMPORTED_TARGET "TIFF::tiff")
 +        else()
 +            set(SDL2IMAGE_TIF_IMPORTED_TARGET "TIFF::TIFF")
