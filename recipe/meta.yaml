@@ -10,7 +10,9 @@ source:
   patches:
     - patches/0001-look-for-conda-forge-variant-of-libwebp.patch                # [win]
     - patches/0002-BLD-Use-CMake-artifacts-instead-of-custom-findwebp.patch     # [win]
+    # equivalent to https://github.com/libsdl-org/SDL_ttf/pull/349 for fixing SOVER
     - patches/0003-fix-library-soversion-name-in-macos.patch                    # [osx]
+    # backport https://github.com/libsdl-org/SDL_image/pull/439
     - patches/0004-fix-libtiff-linking-with-cmake328.patch
 
 build:
