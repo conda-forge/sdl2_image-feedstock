@@ -38,3 +38,15 @@ cmake ${CMAKE_ARGS} -G Ninja \
 
 cmake --build .
 cmake --install . --prefix $PREFIX
+
+# For backward compatibility with old builds of sdl2_ttf that linked with strangly-named
+# version of the libraries, we define some symlinks, remove once the library is updated to sdl3
+if [[ "${target_platform}" == osx-* ]]; then
+    cd ${PREFIX}/lib
+    ln -s ./libSDL2_image-2.0.0.dylib ./libSDL2_image-2.0.801.0.0.dylib
+    ln -s ./libSDL2_image-2.0.0.dylib ./libSDL2_image-2.0.601.3.0.dylib
+    ln -s ./libSDL2_image-2.0.0.dylib ./libSDL2_image-2.0.601.2.0.dylib
+    ln -s ./libSDL2_image-2.0.0.dylib ./libSDL2_image-2.0.601.1.0.dylib
+    ln -s ./libSDL2_image-2.0.0.dylib ./libSDL2_image-2.0.601.0.0.dylib
+    ln -s ./libSDL2_image-2.0.0.dylib ./libSDL2_image-2.0.3.0.0.dylib
+fi
