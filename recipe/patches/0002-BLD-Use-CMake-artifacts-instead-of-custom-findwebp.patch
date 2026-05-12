@@ -1,4 +1,4 @@
-From 686f2357525e2d02db86cecced8dad36d26cf0c8 Mon Sep 17 00:00:00 2001
+From 3b5b398028ebd066fe38f009a2d18698068912db Mon Sep 17 00:00:00 2001
 From: Daniel Ching <carterbox@users.noreply.github.com>
 Date: Fri, 22 Jul 2022 19:10:24 -0500
 Subject: [PATCH 2/2] BLD: Use CMake artifacts instead of custom findwebp
@@ -10,17 +10,17 @@ Subject: [PATCH 2/2] BLD: Use CMake artifacts instead of custom findwebp
  delete mode 100644 cmake/Findwebp.cmake
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 1bcbf391..0d8959c8 100644
+index ff7b96c3..ee99bba3 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -927,7 +927,6 @@ if(SDL2IMAGE_INSTALL)
-             "${CMAKE_CURRENT_BINARY_DIR}/SDL2_imageConfig.cmake"
-             "${CMAKE_CURRENT_BINARY_DIR}/SDL2_imageConfigVersion.cmake"
-             cmake/Findlibjxl.cmake
--            cmake/Findwebp.cmake
-         DESTINATION "${SDLIMAGE_INSTALL_CMAKEDIR}"
-         COMPONENT devel
-     )
+@@ -977,7 +977,6 @@ if(SDLIMAGE_WEBP)
+             set(SDLIMAGE_WEBP_ENABLED TRUE)
+             if(NOT SDLIMAGE_WEBP_SHARED)
+               list(APPEND PC_REQUIRES libwebp libwebpdemux)
+-              list(APPEND INSTALL_EXTRA_CMAKE_MODULES cmake/Findwebp.cmake)
+             endif()
+         else()
+             message(${fatal_error} "libwebp NOT found")
 diff --git a/cmake/Findwebp.cmake b/cmake/Findwebp.cmake
 deleted file mode 100644
 index e07b377c..00000000

@@ -1,4 +1,4 @@
-From 4a1496600f4ed87f48276789bbb2eec802a98bbb Mon Sep 17 00:00:00 2001
+From 11eaef17cc71a0ff2e73c544cea1c591f5e4dab6 Mon Sep 17 00:00:00 2001
 From: "H. Vetinari" <h.vetinari@gmx.com>
 Date: Thu, 21 Jul 2022 20:44:25 +0200
 Subject: [PATCH 1/2] look for conda-forge variant of libwebp
@@ -8,17 +8,17 @@ Subject: [PATCH 1/2] look for conda-forge variant of libwebp
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index b8277645..1bcbf391 100644
+index df566bf6..ff7b96c3 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -823,8 +823,8 @@ if(SDL2IMAGE_WEBP)
-         set_target_properties(webp PROPERTIES EXPORT_NAME "external_libwebp")
-         add_library(SDL2_image::external_libwebp ALIAS webp)
+@@ -971,8 +971,8 @@ if(SDLIMAGE_WEBP)
+         message(STATUS "${PROJECT_NAME}: Using libwebp from CMake variable")
+         set(SDLIMAGE_WEBP_ENABLED TRUE)
      else()
 -        find_package(webp ${required})
 -        if(webp_FOUND)
 +        find_package(WebP ${required})
 +        if(WebP_FOUND)
-             set(SDL2IMAGE_WEBP_ENABLED TRUE)
              message(STATUS "${PROJECT_NAME}: Using system libwebp")
-             if(NOT SDL2IMAGE_WEBP_SHARED)
+             set(SDLIMAGE_WEBP_ENABLED TRUE)
+             if(NOT SDLIMAGE_WEBP_SHARED)
