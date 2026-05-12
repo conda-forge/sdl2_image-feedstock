@@ -1,7 +1,7 @@
 {% set version = "3.2.2" %}
 
 package:
-  name: sdl2_image
+  name: sdl3_image
   version: {{ version }}
 
 source:
@@ -15,7 +15,7 @@ build:
   number: 0
   run_exports:
     # see https://abi-laboratory.pro/tracker/timeline/sdl_image
-    - {{ pin_subpackage("sdl2_image", max_pin="x") }}
+    - {{ pin_subpackage("sdl3_image", max_pin="x") }}
 
 requirements:
   build:
@@ -26,7 +26,7 @@ requirements:
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
   host:
-    - sdl2
+    - sdl3
     - libjpeg-turbo
     - libavif
     # not yet in conda-forge
@@ -39,25 +39,17 @@ requirements:
 test:
   commands:
     # shared libraries
-    - test -f $PREFIX/lib/libSDL2_image.dylib               # [osx]
-    - test -f $PREFIX/lib/libSDL2_image.so                  # [linux]
-    - if not exist %LIBRARY_LIB%\\SDL2_image.lib exit 1     # [win]
-    - if not exist %LIBRARY_BIN%\\SDL2_image.dll exit 1     # [win]
-    # Workaround for https://github.com/conda-forge/sdl2_ttf-feedstock/issues/18, remove once
-    # the library is upgrade to sdl3
-    - test -f $PREFIX/lib/libSDL2_image-2.0.801.0.0.dylib   # [osx]
-    - test -f $PREFIX/lib/libSDL2_image-2.0.601.3.0.dylib   # [osx]
-    - test -f $PREFIX/lib/libSDL2_image-2.0.601.2.0.dylib   # [osx]
-    - test -f $PREFIX/lib/libSDL2_image-2.0.601.1.0.dylib   # [osx]
-    - test -f $PREFIX/lib/libSDL2_image-2.0.601.0.0.dylib   # [osx]
-    - test -f $PREFIX/lib/libSDL2_image-2.0.3.0.0.dylib     # [osx]
+    - test -f $PREFIX/lib/libSDL3_image.dylib               # [osx]
+    - test -f $PREFIX/lib/libSDL3_image.so                  # [linux]
+    - if not exist %LIBRARY_LIB%\SDL3_image.lib exit 1      # [win]
+    - if not exist %LIBRARY_BIN%\SDL3_image.dll exit 1      # [win]
 
     # absence of static libraries
-    - test ! -f $PREFIX/lib/libSDL2_image.a                 # [not win]
+    - test ! -f $PREFIX/lib/libSDL3_image.a                 # [unix]
 
     # headers
-    - test -f $PREFIX/include/SDL2/SDL_image.h              # [unix]
-    - if not exist %LIBRARY_INC%\\SDL2\\SDL_image.h exit 1  # [win]
+    - test -f $PREFIX/include/SDL3_image/SDL_image.h            # [unix]
+    - if not exist %LIBRARY_INC%\SDL3_image\SDL_image.h exit 1  # [win]
 
 about:
   home: https://www.libsdl.org/projects/SDL_image/
