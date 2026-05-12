@@ -1,7 +1,7 @@
-From 3f8161baacf2b57e3c3514b6b485325595e19584 Mon Sep 17 00:00:00 2001
+From 5fe9c22053725fcc316f1f3829de4d35d0b60389 Mon Sep 17 00:00:00 2001
 From: Daniel Ching <carterbox@users.noreply.github.com>
 Date: Fri, 22 Jul 2022 19:10:24 -0500
-Subject: [PATCH 2/2] BLD: Use CMake artifacts instead of custom findwebp
+Subject: [PATCH 2/3] BLD: Use CMake artifacts instead of custom findwebp
 
 ---
  CMakeLists.txt       |  1 -
@@ -10,10 +10,10 @@ Subject: [PATCH 2/2] BLD: Use CMake artifacts instead of custom findwebp
  delete mode 100644 cmake/Findwebp.cmake
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 8ba4b6d..b57072e 100644
+index c080d719..7dc7c3ad 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -771,7 +771,6 @@ if(SDL2IMAGE_INSTALL)
+@@ -784,7 +784,6 @@ if(SDL2IMAGE_INSTALL)
              "${CMAKE_CURRENT_BINARY_DIR}/SDL2_imageConfig.cmake"
              "${CMAKE_CURRENT_BINARY_DIR}/SDL2_imageConfigVersion.cmake"
              cmake/Findlibjxl.cmake
@@ -23,7 +23,7 @@ index 8ba4b6d..b57072e 100644
      )
 diff --git a/cmake/Findwebp.cmake b/cmake/Findwebp.cmake
 deleted file mode 100644
-index 5889131..0000000
+index e07b377c..00000000
 --- a/cmake/Findwebp.cmake
 +++ /dev/null
 @@ -1,56 +0,0 @@
@@ -72,7 +72,7 @@ index 5889131..0000000
 -            INTERFACE_LINK_FLAGS "${webp_LINK_FLAGS}"
 -        )
 -    endif()
--    if (NOT TARGET WEBP::webpdemux)
+-    if (NOT TARGET WebP::webpdemux)
 -        add_library(WebP::webpdemux UNKNOWN IMPORTED)
 -        set_target_properties(WebP::webpdemux PROPERTIES
 -            IMPORTED_LOCATION "${webpdemux_LIBRARY}"

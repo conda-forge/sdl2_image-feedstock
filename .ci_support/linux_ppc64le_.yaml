@@ -1,13 +1,11 @@
 c_compiler:
 - gcc
 c_compiler_version:
-- '12'
+- '14'
 c_stdlib:
 - sysroot
 c_stdlib_version:
 - '2.17'
-cdt_name:
-- cos7
 channel_sources:
 - conda-forge
 channel_targets:
@@ -15,9 +13,9 @@ channel_targets:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '12'
+- '14'
 docker_image:
-- quay.io/condaforge/linux-anvil-ppc64le
+- quay.io/condaforge/linux-anvil-ppc64le:alma9
 libavif:
 - '1'
 libjpeg_turbo:
@@ -25,17 +23,17 @@ libjpeg_turbo:
 libpng:
 - '1.6'
 libtiff:
-- '4.6'
+- '4.7'
 libwebp_base:
 - '1'
 sdl2:
+- '2'
+sdl2_image:
 - '2'
 target_platform:
 - linux-ppc64le
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-- - c_stdlib_version
-  - cdt_name
 zlib:
-- '1.2'
+- '1'
