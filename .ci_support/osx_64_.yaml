@@ -30,10 +30,6 @@ libwebp_base:
 - '1'
 macos_machine:
 - x86_64-apple-darwin13.4.0
-sdl2:
-- '2'
-sdl2_image:
-- '2'
 target_platform:
 - osx-64
 zip_keys:

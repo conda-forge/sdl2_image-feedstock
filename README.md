@@ -1,4 +1,4 @@
-About sdl2_image-feedstock
+About sdl3_image-feedstock
 ==========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sdl2_image-feedstock/blob/main/LICENSE.txt)
@@ -90,53 +90,53 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-sdl2__image-green.svg)](https://anaconda.org/conda-forge/sdl2_image) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sdl2_image.svg)](https://anaconda.org/conda-forge/sdl2_image) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sdl2_image.svg)](https://anaconda.org/conda-forge/sdl2_image) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sdl2_image.svg)](https://anaconda.org/conda-forge/sdl2_image) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-sdl3__image-green.svg)](https://anaconda.org/conda-forge/sdl3_image) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sdl3_image.svg)](https://anaconda.org/conda-forge/sdl3_image) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sdl3_image.svg)](https://anaconda.org/conda-forge/sdl3_image) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sdl3_image.svg)](https://anaconda.org/conda-forge/sdl3_image) |
 
-Installing sdl2_image
+Installing sdl3_image
 =====================
 
-Installing `sdl2_image` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `sdl3_image` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `sdl2_image` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `sdl3_image` can be installed with `conda`:
 
 ```
-conda install sdl2_image
-```
-
-or with `mamba`:
-
-```
-mamba install sdl2_image
-```
-
-It is possible to list all of the versions of `sdl2_image` available on your platform with `conda`:
-
-```
-conda search sdl2_image --channel conda-forge
+conda install sdl3_image
 ```
 
 or with `mamba`:
 
 ```
-mamba search sdl2_image --channel conda-forge
+mamba install sdl3_image
+```
+
+It is possible to list all of the versions of `sdl3_image` available on your platform with `conda`:
+
+```
+conda search sdl3_image --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search sdl3_image --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search sdl2_image --channel conda-forge
+mamba repoquery search sdl3_image --channel conda-forge
 
-# List packages depending on `sdl2_image`:
-mamba repoquery whoneeds sdl2_image --channel conda-forge
+# List packages depending on `sdl3_image`:
+mamba repoquery whoneeds sdl3_image --channel conda-forge
 
-# List dependencies of `sdl2_image`:
-mamba repoquery depends sdl2_image --channel conda-forge
+# List dependencies of `sdl3_image`:
+mamba repoquery depends sdl3_image --channel conda-forge
 ```
 
 
@@ -181,17 +181,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating sdl2_image-feedstock
+Updating sdl3_image-feedstock
 =============================
 
-If you would like to improve the sdl2_image recipe or build a new
+If you would like to improve the sdl3_image recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/sdl2_image-feedstock are
+Note that all branches in the conda-forge/sdl3_image-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
